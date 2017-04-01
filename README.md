@@ -1,24 +1,42 @@
-# README
+Nutrition Service Overview
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://www.ars.usda.gov/ARSUserFiles/80400525/Data/SR/SR28/dnload/sr28asc.zip
 
-Things you may want to cover:
+Required Environment / Minimum Setup
 
-* Ruby version
+http://railsinstaller.org/en
 
-* System dependencies
+Accessing the Site
 
-* Configuration
+`rails s`
+`localhost:3000`
 
-* Database creation
+Configuration
 
-* Database initialization
+provided
 
-* How to run the test suite
+Walkthrough / Smoke Test
 
-* Services (job queues, cache servers, search engines, etc.)
+Describe a manual smoke test process to ensure that the env is running as it should be.
 
-* Deployment instructions
+Testing
 
-* ...
+How do you run the tests?
+
+Staging Environment
+
+Where is it? How do I access it? Who do I speak with to get access?
+
+Production Environment
+
+Where is it? How do I access it? Who do I speak with to get access? Is there a CDN? How does it work? Is there a particular release process?
+
+Design
+
+Spot for designers to put any information they need.
+
+Known Issues / Gotcha
+
+Extended Resources
+
+link to extended resources
