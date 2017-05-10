@@ -10,9 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405023915) do
-
-  create_table "data_srcs", force: :cascade do |t|
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end

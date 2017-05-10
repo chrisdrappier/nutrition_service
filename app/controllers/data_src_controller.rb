@@ -1,0 +1,2 @@
+class DataSrcController < ApplicationController
+end
