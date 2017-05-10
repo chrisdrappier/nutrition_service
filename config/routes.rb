@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   defaults format: :json do
-    resource :data_src, only: [:index, :show]
+    resources :data_src, only: [:index, :show]
     resources :datasrcln, only: [:index, :show]
     resources :deriv_cd, only: [:index, :show]
     resources :fd_group, only: [:index, :show]
