@@ -4,6 +4,6 @@ class ApplicationController < ActionController::API
   end
 
   def index
-    render {}
+    render json: {}
   end
 end

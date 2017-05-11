@@ -15,6 +15,10 @@ class MetadataParser
     resource.titleize.delete(' ')
   end
 
+  def column_names
+    csv.collect { |row| row[0].underscore }
+  end
+
   def columns
     csv.collect do |c|
         attributes = { model_name: model_name,
