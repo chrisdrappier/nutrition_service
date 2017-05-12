@@ -5,9 +5,8 @@ namespace :data do
     return unless File.exists?(arguments.metadata_file_path)
 
     metadata_parser = MetadataParser.new('ABBREV', CSV.read(arguments.metadata_file_path))
-    data_parser = DataParser.new('ABBREV', CSV.read(arguments.data_file_path, headers: true), metadata_parser)
+    data_parser = DataParser.new('ABBREV', CSV.read(arguments.data_file_path), metadata_parser)
     data_parser.write_all
-    binding.pry
   end
 
   def abbrev_columns(data_parser)

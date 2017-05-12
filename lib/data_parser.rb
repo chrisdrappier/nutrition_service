@@ -1,4 +1,4 @@
-
+# parses valid csv
 class DataParser
   attr_reader :csv, :resource, :metadata
   def initialize(resource, csv, metadata)
@@ -9,18 +9,29 @@ class DataParser
 
   def write_all
     all = []
-    csv.each_with_index do |row, index|
-      attrs = {}
-      row.each_with_index do |cell, index|
-        header = column_headers[index]
-        attrs[header] = cell[1]
-      end
-      all << Abbrev.create(attrs)
+    csv.each do |row|
+      all << process_row(row)
     end
-    return all
+    all
+  end
+
+  def process_row(row)
+    attrs = {}
+    row.each_with_index do |cell, index|
+      header = column_headers[index]
+      puts header
+      puts cell
+      attrs[header] = cell
+    end
+    Abbrev.create(attrs)
   end
 
   def column_headers
-    @column_headers ||= csv.headers.collect {|h| h.gsub(/_\(.*\)|_ \(.*\)|_.g.*\)|_g/, '').gsub('+', '_').gsub('_µg', '_mcg').underscore }
+    @column_headers ||= metadata.column_names
+                                .collect do |column_name|
+      column_name.delete('.')
+                 .tr('+', '_')
+                 .delete(' ')
+    end
   end
 end
