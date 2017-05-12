@@ -1,5 +1,5 @@
 require 'rails_helper'
-describe DataSrcController, type: :controller do
+describe AbbrevsController, type: :controller do
   describe '#index' do
     before do
       get :index
@@ -11,8 +11,10 @@ describe DataSrcController, type: :controller do
   end
 
   describe '#show' do
+    let(:abbrev) { double(:abbrev, id: 123) }
     before do
-      get :show, id: 123
+      allow(controller).to receive(:abbrev).and_return(abbrev)
+      get :show, id: abbrev.id
     end
 
     it 'shows the object' do
