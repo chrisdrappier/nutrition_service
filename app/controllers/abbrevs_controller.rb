@@ -4,6 +4,6 @@ class AbbrevsController < ApplicationController
   end
 
   def index
-    render json: Abbrev.all.to_json
+    render json: Abbrev.all.limit(100).to_json
   end
 end
