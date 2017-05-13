@@ -11,10 +11,22 @@ class AbbrevsController < ApplicationController
   private
 
   def abbrevs
-    @abbrevs ||= Abbrev.all.limit(100).to_json
+    @abbrevs ||= Abbrev.where(" id > ? ", offset).limit(per_page).to_json
   end
 
   def abbrev
     @abbrev ||= Abbrev.find_by(ndb_no: params[:id]).to_json
+  end
+
+  def page
+    params[:page] ||= 0
+  end
+
+  def per_page
+    100
+  end
+
+  def offset
+    page * per_page
   end
 end
