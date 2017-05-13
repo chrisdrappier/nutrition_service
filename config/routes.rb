@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  defaults format: :json do
+  scope format: false do
     resources :abbrevs, only: [:index, :show]
     # resources :data_src, only: [:index, :show]
     # resources :datasrcln, only: [:index, :show]

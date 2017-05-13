@@ -4,8 +4,7 @@ describe 'Routes' do
     it 'routes to index' do
       expect(get: 'abbrevs/').to route_to(
         controller: 'abbrevs',
-        action: 'index',
-        format: :json
+        action: 'index'
       )
     end
 
@@ -13,8 +12,7 @@ describe 'Routes' do
       expect(get: 'abbrevs/123').to route_to(
         controller: 'abbrevs',
         action: 'show',
-        id: '123',
-        format: :json
+        id: '123'
       )
     end
   end
