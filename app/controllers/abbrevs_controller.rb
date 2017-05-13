@@ -27,6 +27,6 @@ class AbbrevsController < ApplicationController
   end
 
   def offset
-    page * per_page
+    page.to_i * per_page
   end
 end
