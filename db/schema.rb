@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170511025940) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "abbrevs", force: :cascade do |t|
     t.string   "ndb_no"
     t.string   "shrt_desc"
@@ -68,9 +71,6 @@ ActiveRecord::Schema.define(version: 20170511025940) do
     t.string   "refuse_pct"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "data_srcs", force: :cascade do |t|
   end
 
 end
