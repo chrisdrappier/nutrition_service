@@ -4,8 +4,16 @@ rvm:
 - 2.4.1
 before_script:
 - psql -c 'create database nutrition_service_test;' -U postgres
+script:
+- rubocop
+- reek
+- rake
 deploy:
   provider: heroku
+  run:
+    - "rake db:migrate"
+    - restart
+    - "rake cleanup"
   api_key:
     secure: t7eitK1+2ZtH3KX+AvA8ESIQzvM7HebJa0vGHluL5YIq26YM2S4VkdsIA+uFqfFu7pAz1r9Wo4pu7Ikjo/0EHHvw57LYXKIW3SoWbM/06hxDPKkPqpNF3Az97NUlW6hvKz7x/wWiFPcWxnqrfVRVL7mP+mCZiIuDT0L6/j88fCXMyB3FpdYeax9cucNRDYkRz/+bTWIsomRthIEC71D+RNE9aQYomAmYeEvV3fvfXWo8sfb5u37IFb3w7uEy1rARBTEgKTulbcAh4xUnNs8dVloPivIrl0anVoxGydqCLqKdf456ZFdxU6hZlMCrEttJUn0XhXsaXLpnlare30JHz8JI5krKKOViSy82n9NXGBwIajrZAj/FUq+YRmxA1ro53AK5LnvaCuX5NpjYszUKGQTPgyJ2IVeUsKgk102riRnwOYQkhTxIiZ6CQaEDWsgZxOVbwkPTJNqzNNiilxds8hWr5Tm2WDlo0qqM3+M2AAXcU3ZJ8K5WtAZmEaMtJuJPZU6FPRxT447mXDE6DhOqXYUxkzWjsfUw19CQtQg6Y3YfHc+Sw1dmP1mpeZUZ/kV1mB+Ucego+LEKx+nH7QHViJfg9byG4DmPM7dQtp0fT3Q+Iy6Cz3YkTscNQ9bK9deYHQI6FkEnUOhdDclkU87z0RYrEBmcxlHdfCPAojmkCyc=
   app: nutritionservice
