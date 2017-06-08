@@ -31,6 +31,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
   gem 'reek'
+  gem 'rubocop'
 end
 
 group :development do
@@ -47,6 +48,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'faker'
   gem 'database_cleaner'
+  gem 'sqlite3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
