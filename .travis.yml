@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 2.4.1
+deploy:
+  provider: heroku
+  on:
+    branch: master
+  api_key:
+    secure: XX012yYMR25RhWLRrtflg+/++F4JQTmUwR/ikbjuLAq6TgdyMK90RHGoT+d5v6l4e/K4cvvR4OS8+qYjUDxGum7OiGsnUYM0sOGbKmzsAupU/o2ByZ1jS/Wp1YyJcE3YMK6JKYH0weNOBuokmwTATFzv0UkiovxpycDWRO/E3CkB86C80ZQefC5JTleGqGaLdljU1tlyx16NFmQCuPFgOps+QtHo0GGfCsx/cC0yZvN3Akb/xJWIGXqf9SOcf4ZEytF4Tq9LQZFmvqGkXQfe2efUXiKvGeh/R3A/l6/FDNSdIZIy/TIeBg4EucQ1kBgKzVpxwMwIvmXXoNTo5DpMbj16gkCeX2Inq4+CvYz/K6OKon+9WdNAQsMxYlksNFZPBzZO706TsW8WYZEte5W41vGkpaF/24GOm5fCqHVrFVy4ehF+z+Pi+f0phXmaKPS3CU40cpm6C948d4PM7C1UB41VkMuIZOg45UbMZvimbc2TAgvpQnVmhullgqcyBZFzrV48H6U9m2dTaoTqABLx21cKobzGzsO/+vzJnQNoAhWaSyFtFns5OYNZVi+V4O/lh0CqDsZBzsbsRLqtrm0fiO5JttTkSyG/CK5vsLgtzRgygtaDBkqAEdtcGCvRa5e/4IF23Csg2NhRVC1qEw0NCGT4vkEF+pZPQMByVPtKK/M=
