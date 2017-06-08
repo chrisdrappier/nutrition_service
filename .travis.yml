@@ -4,9 +4,9 @@ rvm:
 - 2.4.1
 before_script:
 - psql -c 'create database nutrition_service_test;' -U postgres
+- bundle exec rubocop app config lib spec script
+- bundle exec reek app config lib spec script
 script:
-- bundle exec rubocop
-- bundle exec reek
 - bundle exec rake
 deploy:
   provider: heroku
