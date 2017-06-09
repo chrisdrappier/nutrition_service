@@ -1,3 +1,8 @@
 AllCops:
   Excludes:
     - db/**/*
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - spec/**/*
+    - Guardfile

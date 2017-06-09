@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# parses metadata csv file in preparation for import to the db
 class MetadataParser
   attr_reader :resource, :csv
   def initialize(resource, csv)
@@ -22,16 +23,15 @@ class MetadataParser
   end
 
   def columns
-    csv.collect do |c|
+    csv.collect do |row|
       attributes = { model_name: model_name,
-                     field_name: c[0],
-                     data_type: c[1],
-                     nullable: c[2],
-                     description: c[3] }
+                     field_name: row[0],
+                     data_type: row[1],
+                     nullable: row[2],
+                     description: row[3] }
 
       raw_data_type = attributes[:data_type].delete(' ')
       data_type = get_data_type(raw_data_type[0])
-      data_type_modifier = get_data_type_modifier(raw_data_type)
       field_name = attributes[:field_name].underscore
       "#{field_name}:#{data_type}"
     end

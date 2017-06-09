@@ -15,7 +15,8 @@ namespace :metadata do
   end
 
   def get_resource(file_name)
-    file_name.gsub('/Users/chris/sr28asc/SR_28 Metadata - ', '').gsub('.csv', '')
+    prefix = '/Users/chris/sr28asc/SR_28 Metadata - '
+    file_name.gsub(prefix, '').gsub('.csv', '')
   end
 
   def files(path)
