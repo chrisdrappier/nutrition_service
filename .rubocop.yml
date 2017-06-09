@@ -1,6 +1,7 @@
 AllCops:
   Excludes:
     - db/**/*
+    - lib/**/*
 Metrics/BlockLength:
   Enabled: true
   Exclude:
