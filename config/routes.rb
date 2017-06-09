@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root to: 'abbrevs#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   scope format: false do
-    resources :abbrevs, only: [:index, :show]
+    resources :abbrevs, only: %i[index show]
     # resources :data_src, only: [:index, :show]
     # resources :datasrcln, only: [:index, :show]
     # resources :deriv_cd, only: [:index, :show]

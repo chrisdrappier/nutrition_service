@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # controller controller controller
 class AbbrevsController < ApplicationController
   def show
@@ -11,7 +13,7 @@ class AbbrevsController < ApplicationController
   private
 
   def abbrevs
-    @abbrevs ||= Abbrev.where(" id > ? ", offset).limit(per_page).to_json
+    @abbrevs ||= Abbrev.where(' id > ? ', offset).limit(per_page).to_json
   end
 
   def abbrev

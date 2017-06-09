@@ -1,6 +1,8 @@
 
+# frozen_string_literal: true
+
 namespace :metadata do
-  task :generate_migrations, [:path] => :environment do |task, arguments|
+  task :generate_migrations, [:path] => :environment do |_task, arguments|
     m_files = files(arguments.path)
 
     m_files.each do |file|

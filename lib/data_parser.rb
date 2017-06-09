@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # parses valid csv
 class DataParser
   attr_reader :csv, :resource, :metadata
